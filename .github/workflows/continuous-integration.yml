@@ -25,6 +25,14 @@ jobs:
       run: python -m pip install --upgrade pip -r test-requirements.txt
     - name: Run pytest
       run: pytest
+    - name: Archive coverage
+      uses: actions/upload-artifact@v3
+      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.10'
+      with:
+        name: coverage
+        path: |
+          coverage.xml
+
   check-style:
     runs-on: ubuntu-latest
     steps:
@@ -39,12 +47,14 @@ jobs:
       uses: actions/checkout@master
     - name: Check code formatting
       uses: psf/black@stable
-  code-cov:
+  code-coverage:
     needs: python-tests
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+    - name: Download coverage artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: coverage
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
