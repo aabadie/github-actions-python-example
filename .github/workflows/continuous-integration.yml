@@ -40,6 +40,7 @@ jobs:
     - name: Check code formatting
       uses: psf/black@stable
   code-cov:
+    needs: python-tests
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
