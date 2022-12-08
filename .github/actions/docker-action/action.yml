@@ -1,0 +1,11 @@
+name: 'Docker Action'
+description: 'An action that is run using a Docker image.'
+inputs:
+  cmd:
+    description: 'The command to run'
+    required: true
+runs:
+  using: 'docker'
+  image: 'aabadie/github-actions-docker:latest'
+  args:
+    - ${{ inputs.cmd }}
