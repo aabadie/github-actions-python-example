@@ -22,7 +22,10 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      run: python -m pip install --upgrade pip -r test-requirements.txt
+      uses: ./.github/actions/install-dependencies
+      with:
+        requirements: test-requirements.txt
+        update-pip: true
     - name: Run pytest
       run: pytest
     - name: Archive coverage
