@@ -53,13 +53,6 @@ jobs:
     needs: python-tests
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
+    - name: Checkout # Required before using a local action
       uses: actions/checkout@master
-    - name: Download coverage artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: coverage
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        verbose: true
+    - uses: ./.github/actions/coverage
