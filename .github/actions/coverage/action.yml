@@ -1,0 +1,13 @@
+name: 'Coverage'
+description: 'Check and upload code coverage'
+runs:
+  using: "composite"
+  steps:
+  - name: Download coverage artifact
+    uses: actions/download-artifact@v3
+    with:
+      name: coverage
+  - name: Upload coverage to Codecov
+    uses: codecov/codecov-action@v3
+    with:
+      verbose: true
