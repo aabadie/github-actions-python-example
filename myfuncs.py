@@ -23,9 +23,11 @@ def divide(a, b):
     except ZeroDivisionError:
         return None
 
+
 def power(a, b):
     """Return a power b."""
     return a**b
+
 
 def gcd(a, b):
     """Return a power b."""
