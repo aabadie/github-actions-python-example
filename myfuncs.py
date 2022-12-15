@@ -33,8 +33,3 @@ def power(a, b):
 def gcd(a, b):
     """Return the GCD of a and b."""
     return math.gcd(a, b)
-
-
-def gcd2(a, b):
-    """Return the GCD of a and b."""
-    return math.gcd(a, b)
