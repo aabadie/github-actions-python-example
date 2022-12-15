@@ -29,7 +29,6 @@ def power(a, b):
     """Return a power b."""
     return a**b
 
-
 def gcd(a, b):
     """Return a power b."""
     return math.gcd(a, b)
