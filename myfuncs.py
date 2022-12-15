@@ -1,5 +1,5 @@
 """Some useless mathematical utility functions."""
-
+import math
 
 def add(a, b):
     """Return the sum of a and b."""
@@ -23,7 +23,10 @@ def divide(a, b):
     except ZeroDivisionError:
         return None
 
-
 def power(a, b):
     """Return a power b."""
-    return a**b + 1
+    return a**b
+
+def gcd(a, b):
+    """Return a power b."""
+    return math.gcd(a, b)
