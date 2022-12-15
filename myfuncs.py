@@ -26,4 +26,4 @@ def divide(a, b):
 
 def power(a, b):
     """Return a power b."""
-    return a**b
+    return a**b + 1
