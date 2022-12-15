@@ -1,6 +1,6 @@
 import pytest
 
-from myfuncs import add, sub, multiply, divide, power
+from myfuncs import add, sub, multiply, divide, power, gcd
 
 
 @pytest.mark.parametrize(
@@ -76,3 +76,19 @@ def test_divide(a, b, res):
 )
 def test_power(a, b, res):
     assert power(a, b) == res
+
+
+@pytest.mark.parametrize(
+    "a,b,res",
+    [
+        (0, 5, 5),
+        (5, 0, 5),
+        (1, 2, 1),
+        (2, 4, 2),
+        (4, 6, 2),
+        (12, 30, 6),
+        (-12, -12, 12),
+    ],
+)
+def test_gcd(a, b, res):
+    assert gcd(a, b) == res

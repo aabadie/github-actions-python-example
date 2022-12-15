@@ -1,4 +1,5 @@
 """Some useless mathematical utility functions."""
+import math
 
 
 def add(a, b):
@@ -27,3 +28,8 @@ def divide(a, b):
 def power(a, b):
     """Return a power b."""
     return a**b
+
+
+def gcd(a, b):
+    """Return the GCD of a and b."""
+    return math.gcd(a, b)
